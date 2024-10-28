@@ -331,6 +331,17 @@ loadTour()
         function isOVRWeb(){
             return window.location.hash.substring(1).split('&').indexOf('ovrweb') > -1;
         }
+        function adjustScale() {
+  let scale = 0.31; // target scale for iframe content
+  document.querySelector('meta[name="viewport"]').setAttribute(
+    'content', 
+    `width=device-width, initial-scale=${scale}, viewport-fit=cover`
+  );
+}
+
+// Run the adjustment function when the content loads
+window.addEventListener("load", adjustScale);
+
     </script>
     <style type="text/css">
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
