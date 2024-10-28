@@ -237,10 +237,7 @@
         }
 
          function adjustScale() {
-  let scale = 0.31; // target scale for iframe content
-  document.querySelector('meta[name="viewport"]').setAttribute(
-    'content', 
-    `width=device-width, initial-scale=${scale}, viewport-fit=cover`
+  document.getElement
   );
 }
 
@@ -291,7 +288,6 @@
 
             showPreloader();
 loadTour()
-            adjustScale()
         }
 
         function playVideo(video) {
@@ -344,7 +340,7 @@ loadTour()
 
     </script>
     <style type="text/css">
-        html, body { width: 100%; height: 100%; margin: 0; padding: 0; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+        html, body { width: 100%; height: 100%; transform: scale(0.31); transform-origin: top left; margin: 0; padding: 0; padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
 
         #viewer { background-color: #000000; z-index:1; position:absolute; width: 100%; height: 100%; top: 0; }
         #preloadContainer { z-index:2; position:relative; width:100%; height:100%; transition: opacity 0.5s; -webkit-transition: opacity 0.5s; -moz-transition: opacity 0.5s; -o-transition: opacity 0.5s;}
