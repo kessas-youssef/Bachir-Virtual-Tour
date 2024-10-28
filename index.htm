@@ -236,6 +236,14 @@
             loadTour();
         }
 
+         function adjustScale() {
+  let scale = 0.31; // target scale for iframe content
+  document.querySelector('meta[name="viewport"]').setAttribute(
+    'content', 
+    `width=device-width, initial-scale=${scale}, viewport-fit=cover`
+  );
+}
+
         function onLoad() {
             if (/AppleWebKit/.test(navigator.userAgent) && /Mobile\/\w+/.test(navigator.userAgent))
             {
@@ -283,6 +291,7 @@
 
             showPreloader();
 loadTour()
+            adjustScale()
         }
 
         function playVideo(video) {
@@ -331,16 +340,7 @@ loadTour()
         function isOVRWeb(){
             return window.location.hash.substring(1).split('&').indexOf('ovrweb') > -1;
         }
-        function adjustScale() {
-  let scale = 0.31; // target scale for iframe content
-  document.querySelector('meta[name="viewport"]').setAttribute(
-    'content', 
-    `width=device-width, initial-scale=${scale}, viewport-fit=cover`
-  );
-}
-
-// Run the adjustment function when the content loads
-window.addEventListener("load", adjustScale);
+       
 
     </script>
     <style type="text/css">
